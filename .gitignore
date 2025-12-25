@@ -1,2 +1,5 @@
 # Ignore all .jpg files
 *.jpg
+
+# Ignore meta.json files
+meta.json
