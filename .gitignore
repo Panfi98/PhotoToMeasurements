@@ -3,3 +3,4 @@
 
 # Ignore meta.json files
 meta.json
+.idea/
