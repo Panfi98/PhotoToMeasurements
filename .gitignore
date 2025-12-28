@@ -1,6 +1,27 @@
-# Ignore all .jpg files
-*.jpg
+# Output files
+output/
 
-# Ignore meta.json files
-meta.json
+# Virtual environment
+venv/
+
+# ML models (downloaded at runtime)
+*.task
+*.tflite
+
+# IDE
 .idea/
+
+# Images
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.PNG
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
