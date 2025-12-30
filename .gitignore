@@ -11,6 +11,9 @@ venv/
 # IDE
 .idea/
 
+# Environment variables
+.env
+
 # Images
 *.jpg
 *.JPG

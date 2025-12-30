@@ -8,14 +8,16 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from typing import Any, Optional
+from dotenv import load_dotenv
 
-# Model paths
-POSE_MODEL_PATH = "pose_landmarker.task"
-SEGMENTER_MODEL_PATH = "selfie_segmenter.tflite"
+# Load environment variables
+load_dotenv()
 
-# Model URLs
-POSE_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task"
-SEGMENTER_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite"
+# Model paths and URLs from environment
+POSE_MODEL_PATH = os.getenv("POSE_MODEL_PATH", "pose_landmarker.task")
+SEGMENTER_MODEL_PATH = os.getenv("SEGMENTER_MODEL_PATH", "selfie_segmenter.tflite")
+POSE_MODEL_URL = os.getenv("POSE_MODEL_URL", "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task")
+SEGMENTER_MODEL_URL = os.getenv("SEGMENTER_MODEL_URL", "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite")
 
 
 def download_model_if_needed(model_path: str, url: str) -> None:
